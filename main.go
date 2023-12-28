@@ -56,13 +56,12 @@ func run() int {
 		return 1
 	}
 
-	templates, err := template.ParseGlob(filepath.Join(*srcDir, *pattern))
+	templates, err := template.New("base").Funcs(sprig.FuncMap()).ParseGlob(filepath.Join(*srcDir, *pattern))
 	if err != nil {
 		log.Printf("unable to parse templates: %v", err)
 		return 1
 	}
 
-	templates.Funcs(sprig.FuncMap())
 	templates.Option("missingkey=error")
 
 	for _, t := range templates.Templates() {
