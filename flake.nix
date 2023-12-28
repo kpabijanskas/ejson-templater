@@ -14,12 +14,7 @@
         packages.default = pkgs.buildGoModule {
           name = "ejson-templater";
 
-          src = pkgs.fetchFromGitHub {
-            owner = "kpabijanskas";
-            repo = "${name}";
-            rev = "v${version}";
-            sha256 = "sha256-qLMyqCkhHm1TDrgd1FLGifHkHuFq+Lv3t1ja0TPm8xM=";
-          };
+          src = ./.;
 
           vendorHash = "sha256-p5/w5uiUQ00IImQJjxClxnMX6yljhdTKoxJqA7lqeK0=";
 
