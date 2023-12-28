@@ -8,7 +8,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         name = "ejson-templater";
-        version = "1.0.0";
+        version = "1.0.1";
         pkgs = nixpkgs.legacyPackages."${system}";
       in {
         packages.default = pkgs.buildGoModule {
